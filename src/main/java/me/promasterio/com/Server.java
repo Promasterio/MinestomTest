@@ -23,7 +23,7 @@ import static me.promasterio.com.util.OpenSimplex2S.noise2;
 
 public class Server {
     public static void main(String[] args) {
-        System.setProperty("minestom.chunk-view-distance", "64");
+        System.setProperty("minestom.chunk-view-distance", "32");
         MinecraftServer server = MinecraftServer.init(new Auth.Online());
         new ServerInfoBossBar();
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
