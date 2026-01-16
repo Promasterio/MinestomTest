@@ -50,34 +50,6 @@ public class OpenSimplex2S {
             GRADIENTS_2D[i] = grad2[j];
         }
     }
-    public static List<Double> terraingen(long seed, double islandSize, double x, double z) {
-        List<Double> result = new ArrayList<>();
-        double size = islandSize / 2;
-        double distance = Math.sqrt(x * x + z * z);
-        double distanceFactor = Math.max(0, 1 - distance / size);
-        double terrainHeight = 0;
-        double amplitude = 0.1;
-        double frequency = 0.005;
-        double totalAmplitude = 0;
-        for (int i = 0; i < 4; i++) {
-            terrainHeight += noise2(seed, x * frequency, z * frequency) * amplitude;
-            totalAmplitude += amplitude;
-            amplitude /= 2;
-            frequency *= 2;
-        }
-        terrainHeight /= totalAmplitude;
-        double flatLandscapeHeight = noise2(seed + 1, x * 0.005, z * 0.005) * 0.5;
-        double blendFactor = Math.max(0, Math.min(1, (flatLandscapeHeight + 1) / 3));
-        double combinedHeight = terrainHeight * (1 - blendFactor) + flatLandscapeHeight * blendFactor;
-        double y = combinedHeight * 40 + 20;
-        y *= distanceFactor;
-        double sandTransitionFactor = Math.max(0, Math.min(1, (distance - (size / 2)) / 100));
-        double sandNoise = noise2(seed + 2, x * 0.05, z * 0.05) * 0.5 + 0.5;
-        double sandProbability = sandTransitionFactor * 0.8 + sandNoise * 0.2;
-        result.add(y);
-        result.add(sandProbability);
-        return result;
-    }
 
     public static float noise2(long seed, double x, double y) {
         double s = SKEW_2D * (x + y);
