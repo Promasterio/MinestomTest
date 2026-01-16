@@ -25,7 +25,6 @@ public class OpenSimplex2S {
                 -0.923879532511287f, -0.38268343236509f,
                 -0.923879532511287f,  0.38268343236509f,
                 -0.38268343236509f,   0.923879532511287f,
-                //-------------------------------------//
                 0.130526192220052f,  0.99144486137381f,
                 0.608761429008721f,  0.793353340291235f,
                 0.793353340291235f,  0.608761429008721f,
@@ -60,64 +59,44 @@ public class OpenSimplex2S {
         double amplitude = 0.1;
         double frequency = 0.005;
         double totalAmplitude = 0;
-
         for (int i = 0; i < 4; i++) {
             terrainHeight += noise2(seed, x * frequency, z * frequency) * amplitude;
             totalAmplitude += amplitude;
             amplitude /= 2;
             frequency *= 2;
         }
-
         terrainHeight /= totalAmplitude;
         double flatLandscapeHeight = noise2(seed + 1, x * 0.005, z * 0.005) * 0.5;
         double blendFactor = Math.max(0, Math.min(1, (flatLandscapeHeight + 1) / 3));
         double combinedHeight = terrainHeight * (1 - blendFactor) + flatLandscapeHeight * blendFactor;
         double y = combinedHeight * 40 + 20;
         y *= distanceFactor;
-
         double sandTransitionFactor = Math.max(0, Math.min(1, (distance - (size / 2)) / 100));
         double sandNoise = noise2(seed + 2, x * 0.05, z * 0.05) * 0.5 + 0.5;
         double sandProbability = sandTransitionFactor * 0.8 + sandNoise * 0.2;
-
         result.add(y);
         result.add(sandProbability);
         return result;
     }
 
     public static float noise2(long seed, double x, double y) {
-
-        // Get points for A2* lattice
         double s = SKEW_2D * (x + y);
         double xs = x + s, ys = y + s;
-
         return noise2_UnskewedBase(seed, xs, ys);
     }
 
     private static float noise2_UnskewedBase(long seed, double xs, double ys) {
-
-        // Get base points and offsets.
         int xsb = fastFloor(xs), ysb = fastFloor(ys);
         float xi = (float)(xs - xsb), yi = (float)(ys - ysb);
-
-        // Prime pre-multiplication for hash.
         long xsbp = xsb * PRIME_X, ysbp = ysb * PRIME_Y;
-
-        // Unskew.
         float t = (xi + yi) * (float)UNSKEW_2D;
         float dx0 = xi + t, dy0 = yi + t;
-
-        // First vertex.
         float a0 = RSQUARED_2D - dx0 * dx0 - dy0 * dy0;
         float value = (a0 * a0) * (a0 * a0) * grad(seed, xsbp, ysbp, dx0, dy0);
-
-        // Second vertex.
         float a1 = (float)(2 * (1 + 2 * UNSKEW_2D) * (1 / UNSKEW_2D + 2)) * t + ((float)(-2 * (1 + 2 * UNSKEW_2D) * (1 + 2 * UNSKEW_2D)) + a0);
         float dx1 = dx0 - (float)(1 + 2 * UNSKEW_2D);
         float dy1 = dy0 - (float)(1 + 2 * UNSKEW_2D);
         value += (a1 * a1) * (a1 * a1) * grad(seed, xsbp + PRIME_X, ysbp + PRIME_Y, dx1, dy1);
-
-        // Third and fourth vertices.
-        // Nested conditionals were faster than compact bit logic/arithmetic.
         float xmyi = xi - yi;
         if (t < UNSKEW_2D) {
             if (xi + xmyi > 1) {
@@ -175,7 +154,6 @@ public class OpenSimplex2S {
                     value += (a2 * a2) * (a2 * a2) * grad(seed, xsbp + PRIME_X, ysbp, dx2, dy2);
                 }
             }
-
             if (yi < xmyi) {
                 float dx2 = dx0 + (float)UNSKEW_2D;
                 float dy2 = dy0 + (float)(UNSKEW_2D + 1);
@@ -194,7 +172,6 @@ public class OpenSimplex2S {
                 }
             }
         }
-
         return value;
     }
 
