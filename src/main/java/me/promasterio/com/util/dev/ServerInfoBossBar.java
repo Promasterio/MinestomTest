@@ -1,4 +1,4 @@
-package me.promasterio.com;
+package me.promasterio.com.util.dev;
 
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
@@ -18,6 +18,7 @@ public class ServerInfoBossBar {
     private final EventNode node = EventNode.all("serverInfo");
     private final AtomicReference<TickMonitor> LAST_TICK = new AtomicReference<>();
     private final BossBar[] bossBar = new BossBar[1];
+    private static final long BYTES_PER_MB = 1024L * 1024L;
 
     public ServerInfoBossBar() {
         MinecraftServer.getGlobalEventHandler().addChild(node);
@@ -28,12 +29,12 @@ public class ServerInfoBossBar {
 
         long[] lastUsedRam = {-1L};
         double[] lastTickTime = {-1.0};
-        long maxRam = Runtime.getRuntime().maxMemory() / (1024 * 1024);
+        long maxRam = Runtime.getRuntime().maxMemory() / BYTES_PER_MB;
 
         MinecraftServer.getSchedulerManager().buildTask(() -> {
             if (MinecraftServer.getConnectionManager().getOnlinePlayerCount() == 0) return;
 
-            long usedRam = benchmarkManager.getUsedMemory() / (1024 * 1024);
+            long usedRam = benchmarkManager.getUsedMemory() / BYTES_PER_MB;
             float ramProgress = (float) Math.min(Math.max((double) usedRam / maxRam, 0.0), 1.0);
 
             TickMonitor tickMonitor = LAST_TICK.get();

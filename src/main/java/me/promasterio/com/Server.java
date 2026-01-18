@@ -1,12 +1,18 @@
 package me.promasterio.com;
 
+import me.promasterio.com.commands.BroadcastCommand;
+import me.promasterio.com.commands.CommandInitializer;
+import me.promasterio.com.util.dev.ServerInfoBossBar;
 import net.minestom.server.Auth;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Point;
 import net.minestom.server.coordinate.Pos;
+import net.minestom.server.entity.Entity;
+import net.minestom.server.entity.EntityType;
 import net.minestom.server.entity.GameMode;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
+import net.minestom.server.event.player.PlayerSpawnEvent;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.LightingChunk;
@@ -22,7 +28,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import static me.promasterio.com.util.OpenSimplex2S.noise2;
 
 public class Server {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         System.setProperty("minestom.chunk-view-distance", "32");
         MinecraftServer server = MinecraftServer.init(new Auth.Online());
         new ServerInfoBossBar();
@@ -33,6 +39,8 @@ public class Server {
 
         instance.setGenerator(new DevastedGenerator(0, 2048));
 
+        CommandInitializer.registerAll();
+
         MinecraftServer.getGlobalEventHandler()
                 .addListener(AsyncPlayerConfigurationEvent.class, event -> {
                     event.setSpawningInstance(instance);
@@ -40,6 +48,15 @@ public class Server {
                     player.setRespawnPoint(new Pos(0, 50, 0));
                     player.setGameMode(GameMode.CREATIVE);
                     player.setPermissionLevel(4);
+                });
+        MinecraftServer.getGlobalEventHandler()
+                .addListener(PlayerSpawnEvent.class, event -> {
+                    Player player = event.getPlayer();
+
+                    Entity cow = new Entity(EntityType.COW);
+                    cow.setAutoViewable(false);
+                    cow.setInstance(instance, player.getPosition());
+                    cow.addViewer(player);
                 });
 
         server.start("127.0.0.1", 25565);
@@ -51,9 +68,9 @@ public class Server {
         private final double islandSize;
 
         // block Palettes
-        private final List<Block> beachBlocks = List.of(Block.SAND, Block.SAND, Block.SANDSTONE);
-        private final List<Block> overworldBlocks = List.of(Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GREEN_CONCRETE_POWDER, Block.GREEN_CONCRETE_POWDER, Block.MOSS_BLOCK, Block.GREEN_WOOL);
-        private final List<Block> flowerBlocks = List.of(Block.POPPY, Block.DANDELION, Block.AZURE_BLUET, Block.OXEYE_DAISY);
+        private static final List<Block> beachBlocks = List.of(Block.SAND, Block.SAND, Block.SANDSTONE);
+        private static final List<Block> overworldBlocks = List.of(Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GREEN_CONCRETE_POWDER, Block.GREEN_CONCRETE_POWDER, Block.MOSS_BLOCK, Block.GREEN_WOOL);
+        private static final List<Block> flowerBlocks = List.of(Block.POPPY, Block.DANDELION, Block.AZURE_BLUET, Block.OXEYE_DAISY);
 
         public DevastedGenerator(long seed, double islandSize) {
             this.seed = seed;
@@ -74,7 +91,6 @@ public class Server {
                 if (Math.abs(x) > islandSize) continue;
                 for (int z = startZ; z < endZ; z++) {
                     if (Math.abs(z) > islandSize) continue;
-
                     double halfSize = islandSize / 2;
                     double distance = Math.sqrt(x * x + z * z);
                     double distanceFactor = Math.max(0, 1 - distance / halfSize);
@@ -101,7 +117,6 @@ public class Server {
                     double sandNoise = noise2(seed + 2, x * 0.05, z * 0.05) * 0.5 + 0.5;
                     double sandProbability = sandTransitionFactor * 0.8 + sandNoise * 0.2;
                     int y = (int) Math.ceil(height);
-                    // fill with dirt
                     for (int h = -64; h < y; h++) {
                         modifier.setBlock(x, h, z, Block.DIRT);
                     }
@@ -130,7 +145,7 @@ public class Server {
                     if (chance == 0) {
                         // flowers
                         modifier.setBlock(x, y + 1, z, getRandomBlock(flowerBlocks, random));
-                    } else if (chance >= 1 && chance <= 6) {
+                    } else if (chance <= 6) {
                         // tall grass
                         modifier.setBlock(x, y + 1, z, Block.TALL_GRASS.withProperty("half", "lower"));
                         modifier.setBlock(x, y + 2, z, Block.TALL_GRASS.withProperty("half", "upper"));
