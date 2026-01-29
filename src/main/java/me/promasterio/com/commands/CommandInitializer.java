@@ -7,12 +7,11 @@ import java.util.List;
 
 public class CommandInitializer {
 
-    private static final List<Command> commands = List.of(
-            new BroadcastCommand()
-    );
-
     public static void registerAll() {
         var commandManager = MinecraftServer.getCommandManager();
-        commands.forEach(commandManager::register);
+
+        commandManager.register(new BroadcastCommand());
+        commandManager.register(new GiveCommand());
+        commandManager.register(new GarbageCollectCommand());
     }
 }

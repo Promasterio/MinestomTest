@@ -155,8 +155,13 @@ public class OpenSimplex2S {
         return GRADIENTS_2D[gi | 0] * dx + GRADIENTS_2D[gi | 1] * dy;
     }
 
-    private static int fastFloor(double x) {
+    public static int fastFloor(double x) {
         int xi = (int)x;
         return x < xi ? xi - 1 : xi;
     }
+    public static int fastCeil(double x) {
+        int xi = (int) x;
+        return (x > xi) ? xi + 1 : xi;
+    }
+
 }
