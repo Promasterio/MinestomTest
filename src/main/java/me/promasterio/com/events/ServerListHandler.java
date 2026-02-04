@@ -18,7 +18,7 @@ import java.util.List;
 
 import static me.promasterio.com.Server.Whitelist;
 
-public class ServerListHandler {
+public class    ServerListHandler {
 
     private static final MiniMessage MINI = MiniMessage.miniMessage();
     private static final int MAX_PLAYERS = 100;

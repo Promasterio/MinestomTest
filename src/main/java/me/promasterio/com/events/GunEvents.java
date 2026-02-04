@@ -49,4 +49,30 @@ public class GunEvents {
 
         public Player getPlayer() { return player; }
     }
+
+    public static final class GunEquipEvent extends CancellableEvent {
+        private final Player player;
+        private final ItemStack gun;
+
+        public GunEquipEvent(Player player, ItemStack gun) {
+            this.player = player;
+            this.gun = gun;
+        }
+
+        public Player getPlayer() { return player; }
+        public ItemStack getGun() { return gun; }
+    }
+
+    public static final class GunUnequipEvent extends CancellableEvent {
+        private final Player player;
+        private final ItemStack gun;
+
+        public GunUnequipEvent(Player player, ItemStack gun) {
+            this.player = player;
+            this.gun = gun;
+        }
+
+        public Player getPlayer() { return player; }
+        public ItemStack getGun() { return gun; }
+    }
 }
