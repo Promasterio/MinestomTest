@@ -13,5 +13,6 @@ public class CommandInitializer {
         commandManager.register(new BroadcastCommand());
         commandManager.register(new GiveCommand());
         commandManager.register(new GarbageCollectCommand());
+        commandManager.register(new FOVCommand());
     }
 }

@@ -5,6 +5,7 @@ import me.promasterio.com.data.SkinUtil;
 import me.promasterio.com.events.InventoryEvents;
 import me.promasterio.com.events.ServerListHandler;
 import me.promasterio.com.items.Guns;
+import me.promasterio.com.util.camera.CameraManager;
 import me.promasterio.com.util.dev.ServerInfoBossBar;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -15,12 +16,8 @@ import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.*;
 import net.minestom.server.entity.attribute.Attribute;
 import net.minestom.server.event.GlobalEventHandler;
-import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
-import net.minestom.server.event.player.AsyncPlayerPreLoginEvent;
-import net.minestom.server.event.player.PlayerSkinInitEvent;
-import net.minestom.server.event.player.PlayerSpawnEvent;
+import net.minestom.server.event.player.*;
 import net.minestom.server.instance.InstanceContainer;
-import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.instance.generator.GenerationUnit;
@@ -31,7 +28,6 @@ import net.minestom.server.potion.Potion;
 import net.minestom.server.potion.PotionEffect;
 import net.minestom.server.world.DimensionType;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +47,7 @@ public class Server {
         return instance;
     }
 
-    static void main(String[] args) throws IOException {
+    static void main() {
         System.setProperty("minestom.chunk-view-distance", "32");
         System.setProperty("minestom.faster-socket-writes", "true");
         System.setProperty("minestom.new-socket-write-lock", "true");
@@ -102,7 +98,14 @@ public class Server {
             cow.setAutoViewable(false);
             cow.setInstance(instance, player.getPosition());
             cow.addViewer(player);
+            CameraManager.create(player);
         });
+
+        globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> {
+            Player player = event.getPlayer();
+            CameraManager.remove(player);
+        });
+
         globalEventHandler.addListener(PlayerSkinInitEvent.class, event -> {
             event.setSkin(SkinUtil.getSkin("devaster"));
         });
@@ -148,19 +151,12 @@ public class Server {
 
 
 
-    public static class DevastedGenerator implements Generator {
-        private final long seed;
-        private final double islandSize;
+    public record DevastedGenerator(long seed, double islandSize) implements Generator {
 
         // block Palettes
         private static final List<Block> beachBlocks = List.of(Block.SAND, Block.SAND, Block.SANDSTONE);
         private static final List<Block> overworldBlocks = List.of(Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GRASS_BLOCK, Block.GREEN_CONCRETE_POWDER, Block.GREEN_CONCRETE_POWDER, Block.MOSS_BLOCK, Block.GREEN_WOOL);
         private static final List<Block> flowerBlocks = List.of(Block.POPPY, Block.DANDELION, Block.AZURE_BLUET, Block.OXEYE_DAISY);
-
-        public DevastedGenerator(long seed, double islandSize) {
-            this.seed = seed;
-            this.islandSize = islandSize;
-        }
 
         @Override
         public void generate(GenerationUnit unit) {

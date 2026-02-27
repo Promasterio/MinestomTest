@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc92d3ae-79d8-4ec9-be2a-36de12475212" name="Changes" comment="ThatOneDevil wanted to steal my code. Happy Valentine's Day!">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/forwarding.secret" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_ar_SA.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_bg_BG.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_cs_CZ.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_da_DK.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_de_DE.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_es_ES.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_et_EE.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_fi_FI.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_fr_FR.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_he_IL.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_hu_HU.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_it_IT.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_ja_JP.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_ko_KR.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_nb_NO.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_nl_NL.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_nn_NO.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_pl_PL.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_pt_BR.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_ro_RO.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_ru_RU.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_sk_SK.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_sq_AL.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_sr_CS.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_sr_Latn.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_sv_SE.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_tl_PH.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_tr_TR.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_uk_UA.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_vi_VN.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_zh_CN.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_zh_HK.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/lang/messages_zh_TW.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/plugins/bStats/config.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/plugins/viaversion/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Velocity/velocity.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/latest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/commands/FOVCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/util/camera/CameraManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/util/camera/PlayerCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/promasterio/com/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/promasterio/com/commands/CommandInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/commands/CommandInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/promasterio/com/items/Guns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/promasterio/com/items/Guns.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MinestomTest" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Promasterio&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Promasterio/MinestomTest.git&quot;,
+    &quot;accountId&quot;: &quot;6b21b813-6184-4ee3-bdef-2054bde02173&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="38JEUyjIzm7wwWm3eKgnYPSTClQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build MinestomTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.C:/Users/Knaagdier/IdeaProjects/MinestomTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MinestomTest [:Server.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MinestomTest [:me.promasterio.com.Server.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MinestomTest.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.Velocity.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Knaagdier/IdeaProjects/MinestomTest/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Knaagdier\IdeaProjects\MinestomTest\assets" />
+      <recent name="C:\Users\Knaagdier\IdeaProjects\MinestomTest\Velocity\plugins" />
+      <recent name="C:\Users\Knaagdier\IdeaProjects\MinestomTest\Velocity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.promasterio.com.commands" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Compound.Start Server">
+    <configuration name="Server" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.promasterio.com.Server" />
+      <module name="MinestomTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.promasterio.com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start Server" type="CompoundRunConfigurationType">
+      <toRun name="Server" type="Application" />
+      <toRun name="Velocity" type="JarApplication" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Velocity" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/Velocity/velocity-3.4.0-SNAPSHOT-562.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Knaagdier\IdeaProjects\MinestomTest\Velocity\" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Compound.Start Server" />
+      <item itemvalue="JAR Application.Velocity" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc92d3ae-79d8-4ec9-be2a-36de12475212" name="Changes" comment="" />
+      <created>1768509293497</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768509293497</updated>
+      <workItem from="1768509295086" duration="771000" />
+      <workItem from="1768510079462" duration="604000" />
+      <workItem from="1768510696080" duration="11783000" />
+      <workItem from="1768560916189" duration="2838000" />
+      <workItem from="1768759212550" duration="289000" />
+      <workItem from="1768759516346" duration="7810000" />
+      <workItem from="1768834571964" duration="12783000" />
+      <workItem from="1768919743270" duration="7495000" />
+      <workItem from="1769002772335" duration="12692000" />
+      <workItem from="1769095189386" duration="9864000" />
+      <workItem from="1769179029741" duration="9510000" />
+      <workItem from="1769203636425" duration="8049000" />
+      <workItem from="1769247623979" duration="3090000" />
+      <workItem from="1769521819927" duration="14556000" />
+      <workItem from="1769702172536" duration="14876000" />
+      <workItem from="1770214099647" duration="3801000" />
+      <workItem from="1770408762003" duration="6906000" />
+      <workItem from="1772134336562" duration="29000" />
+    </task>
+    <task id="LOCAL-00001" summary="first git commit test">
+      <option name="closed" value="true" />
+      <created>1768561178306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768561178306</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first git commit test">
+      <option name="closed" value="true" />
+      <created>1768561338120</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1768561338120</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first git commit test">
+      <option name="closed" value="true" />
+      <created>1768562196975</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768562196975</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first git commit test">
+      <option name="closed" value="true" />
+      <created>1768563617881</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768563617881</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ThatOneDevil wanted to steal my code. Happy Valentine's Day!">
+      <option name="closed" value="true" />
+      <created>1769721256464</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1769721256464</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first git commit test" />
+    <MESSAGE value="ThatOneDevil wanted to steal my code. Happy Valentine's Day!" />
+    <option name="LAST_COMMIT_MESSAGE" value="ThatOneDevil wanted to steal my code. Happy Valentine's Day!" />
+  </component>
+</project>

@@ -1,0 +1,3 @@
+[14:57:52] [main/INFO] (ViaProxy) Usage: java -jar ViaProxy-3.4.8.jar | Starts ViaProxy in graphical mode if available
+[14:57:52] [main/INFO] (ViaProxy) Usage: java -jar ViaProxy-3.4.8.jar config <config file> | Starts ViaProxy with the specified config file
+[14:57:52] [main/INFO] (ViaProxy) Usage: java -jar ViaProxy-3.4.8.jar cli --help | Starts ViaProxy in CLI mode
